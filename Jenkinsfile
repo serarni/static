@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh 'echo "Init..."'
                 sh 'echo "tidy -q -e *.html"'
+                currentBuild.result = 'FAILURE'
             }
         }
         stage('Upload to AWS') {
