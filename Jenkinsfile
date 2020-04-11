@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Lint HTML') {
             steps {
-                sh 'echo "Init..."'
-                sh 'echo "tidy -q -e *.html"'
-                currentBuild.result = 'FAILURE'
+                sh 'tidy -q -e *.html'
             }
         }
         stage('Upload to AWS') {
