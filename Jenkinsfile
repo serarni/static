@@ -9,9 +9,9 @@ pipeline {
         stage('Upload to AWS') {
             steps {
                 sh 'echo "Testing sh commands..."'
-                withAWS(credentials: 'aws-static', region: 'eu-central-1') {
+                withAWS(credentials: 'aws-static', region: 'us-east-2') {
                     sh 'Uploading conteng to AWS bucket'
-                    sh 'aws s3 cp index.html s3://jenkins-serarni-udacity-p4/'
+                    sh 'aws s3 cp index.html s3://udacity-cap4-project/'
                 }
             }
         }
