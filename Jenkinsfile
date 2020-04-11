@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Upload to AWS') {
             steps {
-                sh 'echo "Init..."'
+                sh 'echo "Init_2..."'
                 withAWS(credentials: 'aws-static', region: 'eu-central-1') {
                     sh 'Uploading conteng to AWS bucket'
                     s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'file.txt', bucket:'jenkins-serarni-udacity-p4')
