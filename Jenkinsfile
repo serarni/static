@@ -5,8 +5,8 @@ pipeline {
             steps {
                 sh 'echo "Init..."'
                 withAWS(credentials: 'aws-static', region: 'eu-central-1') {
-                    sh 'AWS loged'
-                    s3Upload acl: 'Private', bucket: 'jenkins-serarni-udacity-p4', file: 'index.html'
+                    sh 'Uploading conteng to AWS bucket'
+                    s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'file.txt', bucket:'jenkins-serarni-udacity-p4')
                     sh 'index.html uploaded OK'
                 }
             }
