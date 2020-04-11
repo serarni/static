@@ -15,7 +15,7 @@ pipeline {
                 }
             }
         }
-        stage('Upload to AWS') {
+        /*stage('Upload to AWS') {
             steps {
                 sh 'echo "Init_2..."'
                 withAWS(credentials: 'aws-static', region: 'eu-central-1') {
@@ -25,6 +25,6 @@ pipeline {
                     sh 'index.html uploaded OK'
                 }
             }
-        }
+        }*/
     }
 }
