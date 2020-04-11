@@ -6,7 +6,7 @@ pipeline {
                 sh 'echo "Init_2..."'
                 withAWS(credentials: 'aws-static', region: 'eu-central-1') {
                     sh 'Uploading conteng to AWS bucket'
-                    s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'file.txt', bucket:'jenkins-serarni-udacity-p4')
+                    s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'jenkins-serarni-udacity-p4')
                     sh 'index.html uploaded OK'
                 }
             }
